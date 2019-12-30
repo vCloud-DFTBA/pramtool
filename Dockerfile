@@ -11,4 +11,4 @@ RUN GOOS=linux GOARCH=amd64 CGO_ENABLED=0 go build -o /go/bin/promtool github.co
 
 FROM alpine:3.9
 COPY --from=0 /go/bin/promtool /go/bin/amtool /bin/
-ENTRYPOINT ["/bin/sh"]
+CMD ["/bin/sh"]
