@@ -9,6 +9,6 @@ RUN go mod init github.com/vCloud-DFTBA/pramtool \
 RUN GOOS=linux GOARCH=amd64 CGO_ENABLED=0 go build -o /go/bin/promtool github.com/prometheus/prometheus/cmd/promtool \
     && GOOS=linux GOARCH=amd64 CGO_ENABLED=0 go build -o /go/bin/amtool github.com/prometheus/alertmanager/cmd/amtool
 
-FROM alpine:3.13
+FROM alpine:3.19
 COPY --from=0 /go/bin/promtool /go/bin/amtool /bin/
 CMD ["/bin/sh"]
