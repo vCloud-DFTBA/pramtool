@@ -1,4 +1,4 @@
-FROM golang:1.16
+FROM golang:1.27
 ARG prom_version
 ARG am_version
 
